@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<title>Navires</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css"
+	th:href="@{css/bootstrap.min.css}" />
+	
+</head>
+<body>
+	<div class="spacer col-md-15" layout:fragment="content">
+		<div class="panel panel-default" >
+                    <div class="panel-heading"><h1 class="text-center">Modifier Navire</h1></div>
+			<div class="panel-body">
+				<form th:action="@{/admin/save}" method="post" modelAttribut="navire" class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="numeroNavire">NumeroNavire:</label>
+                                                <div class="col-sm-10">
+                                                <input class="form-control" id="numeroNavire" placeholder="NumeroNavire"
+							type="text" name="numeroNavire"
+							th:value="${navire.numeroNavire}" /> 
+							<span class="red" th:errors="${navire.numeroNavire}"></span>
+                                                </div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="nomNavire">NomNavire:</label>
+                                                <div class="col-sm-10">
+                                                <input class="form-control" id="nomNavire" placeholder="nomNavire"
+							type="text" name="nomNavire"
+							th:value="${navire.nomNavire}" /> <span class="red"
+							th:errors="${navire.nomNavire}"></span>
+                                                </div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="longueurNavire">LongueurNavire:</label> 
+                                                <div class="col-sm-10">
+                                                <input class="form-control" id="longueurNavire" placeholder="longueurNavire"
+							type="text" name="longueurNavire"
+							th:value="${navire.longueurNavire}" />
+                                                </div>
+
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="largeurNavire">LargueurNavire:</label> 
+                                                <div class="col-sm-10">
+                                                <input class="form-control" id="largueurNavire" placeholder="largueurNavire"
+							type="text" name="largueurNavire"
+							th:value="${navire.largeurNavire}" />
+                                                </div>
+
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="voulumeNavire">VolumeNavire:</label>
+                                                <div class="col-sm-10">
+                                                <input class="form-control" id="voulumeNavire" placeholder="voulumeNavire"
+                                                        type="text" name="voulumeNavire"
+							th:value="${navire.voulumeNavire}" />
+                                                </div>
+
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="tiranEauNavire">TiranEauNavire:</label> 
+                                                <div class="col-sm-10">
+                                                <input class="form-control" id="tiranEauNavire" placeholder="tiranEauNavire"
+							type="text" name="tiranEauNavire"
+							th:value="${navire.tiranEauNavire}" />
+                                                </div>
+
+					</div>
+                                            
+                                    <div class="text-center">
+						<button type="submit" class="btn btn-primary">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+

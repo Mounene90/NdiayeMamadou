@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<title>Navires</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css"
+	th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="spacer col-md-5" layout:fragment="content">
+		<div class="panel panel-default">
+			<div class="panel-heading">Saisie d'un Escale</div>
+			<div class="panel-body">
+				<form th:action="@{/admin/saves}" method="post" modelAttribut="escale" class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="numEscale">NumeroEscale:</label> 
+                                                <div class="col-sm-10">
+                                                <input class="form-control" id="numEscale" placeholder="numEscale"
+							type="text" name="numEscale"
+							th:value="${escale.numEscale}" /> <span class="red"
+							th:errors="${escale.numEscale}"></span>
+                                                </div>
+                                        </div>       
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="debutEscale" >Datedebut:</label>
+                                                <div class="col-sm-10">
+                                                <input class="form-control" id="debutEscale" placeholder="debutEscale"
+							type="date"  name="debutEscale" 
+							th:value="${escale.debutEscale}" /> <span class="red"
+							th:errors="${escale.debutEscale}"></span>
+                                                </div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="finEsale">Datefin:</label>
+                                                <div class="col-sm-10">
+                                                <input class="form-control" id="finEsale" placeholder="finEsale"
+							type="date" name="finEsale" 
+							th:value="${escale.finEsale}" /><span class="red"
+							th:errors="${escale.finEsale}"></span>
+                                                </div>
+
+					</div>
+					 <div class="form-group">
+                                             <label class="control-label col-sm-2" for="myconsignataire">Consignataire:</label>
+                                             <div class="col-sm-10">
+			      			<select class="form-control" id="myconsignataire" name="myconsignataire">
+			      				<option label="Consignataire" value="1"></option>
+			      				<option th:each="c:${consignataire}" th:text="${c.libelleConsignataire}" th:value="${c.numConsignataire}"></option>
+			      			</select>
+                                             </div>   
+			      		 </div>
+					 <div class="form-group">
+                                             <label class="control-label col-sm-2" for="mynavire">Navire:</label>
+                                             <div class="col-sm-10">
+			      			<select class="form-control" id="mynavire" name="mynavire">
+			      				<option label="Navire" value="1"></option>
+			      				<option th:each="n:${navire}" th:text="${n.nomNavire}" th:value="${n.numeroNavire}"></option>
+			      			</select>
+                                             </div>
+			      		 </div>
+					<div class="form-group">
+                                            
+						<label class="control-label col-sm-2" for="prixSejour">PrixSejour:</label>
+                                                <div class="col-sm-10">
+                                                <input class="form-control" id="prixSejour" placeholder="prixSejour"
+                                                        type="text" name="prixSejour"
+							th:value="${escale.prixSejour}" /> <span class="red"
+							th:errors="${escale.prixSejour}"></span>
+                                                </div>
+					</div>
+                                         
+					<div>
+						<button type="submit" class="btn btn-primary">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+

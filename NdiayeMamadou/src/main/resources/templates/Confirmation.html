@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<title>Navires</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css"
+	th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">Confirmation</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label>NumeroNavire:</label> <label
+							th:text="${navire.numeroNavire}"></label>
+					</div>
+					<div class="form-group">
+						<label>NomNavire:</label> <label th:text="${navire.nomNavire}"></label>
+					</div>
+					<div class="form-group">
+						<label>LongueurNavire:</label> <label
+							th:text="${navire.longueurNavire}"></label>
+					</div>
+					<div class="form-group">
+						<label>LargeurNavire:</label> <label
+							th:text="${navire.largeurNavire}"></label>
+					</div>
+					<div class="form-group">
+						<label>VolumeNavire:</label> <label
+							th:text="${navire.voulumeNavire}"></label>
+					</div>
+					<div class="form-group">
+						<label>TiranEauNavire:</label> <label
+							th:text="${navire.tiranEauNavire}"></label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

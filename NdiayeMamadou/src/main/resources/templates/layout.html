@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8"/>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+<body>
+	<header>
+            <div class="jumbotron text-center">
+  <h1>Gestion Navire</h1>
+  
+  </div>
+            <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SiteNavire</a>
+    </div>
+    <ul class="nav navbar-nav">
+     
+      <li><a th:href="@{/user/index}">Gestion Navire</a></li>
+<!--      <li><a th:href="@{/admin/form}">Navire</a></li>-->
+      <li><a th:href="@{/user/index2}">Gestion Escale</a></li>
+<!--      <li><a th:href="@{/admin/forms}">Escale</a></li>-->
+      <li><a th:href="@{/user/index4}">Gestion Consignataire</a></li>
+<!--      <li><a th:href="@{/admin/formcons}">Consignataire</a></li>-->
+      <li><a th:href="@{/user/index3}">Gestion Mouvement</a></li>
+<!--      <li><a th:href="@{/admin/formmouvement}">Mouvement</a></li>-->
+      <li><a th:href="@{/user/index1}">Gestion BonPilotage</a></li>
+<!--      <li><a th:href="@{/admin/formbon}">Bon</a></li>-->
+      <li>
+      <a th:href="@{/login?logout}" th:inline="text">
+      [[${#httpServletRequest.remoteUser}]]
+      </a></li>
+    </ul>
+  </div>
+</nav>
+
+<!--			<ul class="nav nav-tabs">
+                           
+ 
+  
+                                   
+                                        <li><a th:href="@{/user/index}">Chercher Navire</a></li>
+					<li><a th:href="@{/admin/form}">Navire</a></li>
+                                        <li><a th:href="@{/user/index2}">Chercher Escale</a></li>
+                                        <li><a th:href="@{/admin/forms}">Escale</a></li>
+                                        <li><a th:href="@{/user/index4}">Chercher Consignataire</a></li>
+                                        <li><a th:href="@{/admin/formcons}">Consignataire</a></li>
+                                        <li><a th:href="@{/user/index3}">Chercher Mouvement</a></li>
+                                        <li><a th:href="@{/admin/formmouvement}">Mouvement</a></li>
+                                        <li><a th:href="@{/user/index1}">BON</a></li>
+                                        <li><a th:href="@{/admin/formbon}">BON</a></li>
+                                        <li>
+                                            <a th:href="@{/login?logout}" th:inline="text">
+                                                [[${#httpServletRequest.remoteUser}]]
+                                            </a></li>
+				</ul>-->
+			
+	</header>
+
+
+    <section  layout:fragment="content"></section>
+
+
+	<footer class="navbar-fixed-bottom">
+		<hr />
+		<div class="container">
+			<small> Copyright @2018  </small>
+		</div>
+
+	</footer>
+</body>
+</html>
